@@ -34,11 +34,11 @@ class CategoryFixtures extends Fixture
         // $manager->flush();
         // // flush necessaire qu'une seule fois 
             
-        foreach(self::CATEGORIES as $key => $categoryName){
+        foreach(self::CATEGORIES as $categoryName){
             $category = new Category;
             $category->setName($categoryName);
-
             $manager->persist($category);
+            $this->addReference('category_' . $categoryName, $category);
         }
         $manager->flush();
     }
