@@ -42,13 +42,13 @@ class ProgramRepository extends ServiceEntityRepository
 //    /**
 //     * @return Program[] Returns an array of Program objects
 //     */
-//    public function findByExampleField($value): array
+//    public function findByCategoryId(int $categoryId): array
 //    {
 //        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
+//            ->andWhere('p.category_id = :category_id')
+//            ->setParameter('category_id', $categoryId)
 //            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
+//            ->setMaxResults(3)
 //            ->getQuery()
 //            ->getResult()
 //        ;
