@@ -16,4 +16,13 @@ class ProgramController extends AbstractController
             'website' => 'Ma premiére page',   
         ]);
     }
+
+    #[Route('/{id}', methods: ['GET'], name: 'show', requirements: ['id' => '\d+'])]
+    public function show(int $id): Response
+    {
+        return $this->render('program/show.html.twig', [
+            'id' => $id,
+        ]);
+
+    }
 }
