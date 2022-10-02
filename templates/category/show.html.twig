@@ -1,16 +1,8 @@
-{% extends 'base.html.twig' %}
-
+{% extends "base.html.twig" %}
 
 {% block body %}
-<!doctype html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Wild Series</title>
-</head>
-<body>
-   <h1>Tous les programmes</h1>
-   {% for program in programs %}
+
+      {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.synopsis }}</p>
@@ -19,9 +11,8 @@
     {% else %}
         Aucune série trouvée.
     {% endfor %}
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
+    
+    <a href="{{ path('category_index') }}">
+        Retour à la liste des catégories
     </a>
-</body>
-</html>
 {% endblock %}
