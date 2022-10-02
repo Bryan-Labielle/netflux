@@ -2,6 +2,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Program;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -34,12 +35,12 @@ class CategoryFixtures extends Fixture
         // $manager->flush();
         // // flush necessaire qu'une seule fois 
             
-        foreach(self::CATEGORIES as $categoryName){
-            $category = new Category;
-            $category->setName($categoryName);
-            $manager->persist($category);
-            $this->addReference('category_' . $categoryName, $category);
-        }
-        $manager->flush();
+    //     foreach(self::CATEGORIES as $categoryName){
+    //         $category = new Category();
+    //         $category->setName($categoryName);
+    //         $manager->persist($category);
+    //         $this->addReference('category_' . $categoryName, $category);
+    //     }
+    //     $manager->flush();
     }
 }
