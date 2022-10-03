@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1>Program {{ id }}</h1>
+<h1>Program</h1>
 
      <div class="media">
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
@@ -12,7 +12,7 @@
             <p>Catégorie : {{ program.category.name }}</p>
             {% for season in seasons %}
                 <p>Season: {{ season.number}}</p>
-                <a href="{{ path('program_season_show', { programId: program.id, seasonId: season.id })}}"> Voir la fiche</a>
+                <a href="{{ path('program_season_show', { program: program.id, season: season.id })}}"> Voir la fiche</a>
             {% endfor %}
         </div>
     </div>
